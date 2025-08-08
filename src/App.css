@@ -1,0 +1,66 @@
+/* base */
+:root { --muted-border: #f0f0f0; --thin: #ececec; --muted-text: #6b6b6b; }
+html, body, #root { height: 100%; margin: 0; font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: #ffffff; }
+
+/* Layout */
+.app-layout { background: #fff; }
+.sidebar {
+  padding: 0;
+  background: linear-gradient(180deg, rgba(255,250,212,1) 0%, #ffffff 60%);
+  position: relative;
+  border-right: 1px solid var(--thin);
+}
+
+/* big soft yellow halo (bigger & subtle) */
+.yellow-circle {
+  position: absolute;
+  top: -60px;
+  left: -50px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,232,95,0.28) 0%, rgba(255,232,95,0.12) 30%, transparent 60%);
+  z-index: 0;
+}
+
+.logo-wrap { position: relative; padding: 28px 18px; z-index: 2; }
+.logo { font-weight: 700; font-size: 22px; position: relative; z-index: 3; }
+
+/* Menu items: no blue highlight, bold when selected */
+.side-menu { border-right: 0; }
+.side-item { font-weight: 500; color: #111; }
+.ant-menu-item-selected {
+  background: transparent !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+}
+
+/* Admin area at bottom with divider */
+.admin-wrap {
+  position: absolute;
+  bottom: 20px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.divider {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--thin);
+}
+.admin-avatar {
+  background: #e8e8e8 !important;
+  color: #000 !important;
+  font-weight: 900 !important;
+}
+.admin-name { font-weight: 700; color: #000; }
+
+/* Main content */
+.content { padding: 24px; }
+.page-title { margin: 0 0 14px 0; font-size: 20px; font-weight: 600;
+}
