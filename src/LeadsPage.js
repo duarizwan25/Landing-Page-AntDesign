@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Layout, Menu, Table, Input, Select, Avatar } from "antd";
+import logo from "./assets/logo.png"; // Your logo here
 import "antd/dist/reset.css";
 import { SearchOutlined } from "@ant-design/icons";
 
@@ -121,98 +122,104 @@ const LeadsPage = () => {
   const tableData = [...paginatedData, paginationRow];
 
   const columns = [
-  {
-    title: (
-      <span style={{ color: "#999", fontWeight: "normal" }}>
-        Name <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
-      </span>
-    ),
-    dataIndex: "name"
-  },
-  {
-    title: (
-      <span style={{ color: "#999", fontWeight: "normal" }}>
-        Submitted <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
-      </span>
-    ),
-    dataIndex: "submitted"
-  },
-  {
-    title: (
-      <span style={{ color: "#999", fontWeight: "normal" }}>
-        Status <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
-      </span>
-    ),
-    dataIndex: "status"
-  },
-  {
-    title: (
-      <span style={{ color: "#999", fontWeight: "normal" }}>
-        Country <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
-      </span>
-    ),
-    dataIndex: "country"
-  }
-];
+    {
+      title: (
+        <span style={{ color: "#999", fontWeight: "normal" }}>
+          Name <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
+        </span>
+      ),
+      dataIndex: "name"
+    },
+    {
+      title: (
+        <span style={{ color: "#999", fontWeight: "normal" }}>
+          Submitted <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
+        </span>
+      ),
+      dataIndex: "submitted"
+    },
+    {
+      title: (
+        <span style={{ color: "#999", fontWeight: "normal" }}>
+          Status <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
+        </span>
+      ),
+      dataIndex: "status"
+    },
+    {
+      title: (
+        <span style={{ color: "#999", fontWeight: "normal" }}>
+          Country <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
+        </span>
+      ),
+      dataIndex: "country"
+    }
+  ];
 
   return (
     <Layout style={{ height: "100vh", background: "transparent" }}>
-  {/* Sidebar */}
-  <Sider
-    width={200}
-    style={{
-      background: "transparent",
-      borderRight: "1px solid #f0f0f0",
-      position: "relative",
-      overflow: "hidden",
-      height: "100vh",
-    }}
-  >
-    {/* Yellow semi-circle inside sidebar */}
-    <div
-      style={{
-        position: "absolute",
-        top: "-150px",
-        left: "-150px",
-        width: "400px",
-        height: "400px",
-        background: "radial-gradient(circle, rgba(255,255,150,0.4) 0%, transparent 70%)",
-        borderRadius: "50%",
-        pointerEvents: "none",
-        zIndex: 0
-      }}
-    />
+      {/* Sidebar */}
+      <Sider
+        width={200}
+        style={{
+          background: "transparent",
+          borderRight: "1px solid #f0f0f0",
+          position: "relative",
+          overflow: "hidden",
+          height: "100vh",
+        }}
+      >
+        {/* Yellow semi-circle inside sidebar */}
+        <div
+          style={{
+            position: "absolute",
+            top: "-150px",
+            left: "-150px",
+            width: "400px",
+            height: "400px",
+            background: "radial-gradient(circle, rgba(255,255,150,0.4) 0%, transparent 70%)",
+            borderRadius: "50%",
+            pointerEvents: "none",
+            zIndex: 0
+          }}
+        />
 
-    <div style={{ padding: "20px", fontWeight: "bold", fontSize: "20px", position: "relative", zIndex: 1 }}>
-      almà
-    </div>
-    <Menu
-      mode="inline"
-      defaultSelectedKeys={["1"]}
-      style={{ borderRight: 0, background: "transparent", position: "relative", zIndex: 1 }}
-    >
-      <Menu.Item key="1" style={{ fontWeight: "bold" }}>
-        Leads
-      </Menu.Item>
-      <Menu.Item key="2">Settings</Menu.Item>
-    </Menu>
+        {/* Logo instead of text */}
+        <div style={{ padding: "20px", position: "relative", zIndex: 1 }}>
+          <img 
+            src={logo} 
+            alt="Logo" 
+            style={{ width: "120px", height: "auto", display: "block" }} 
+          />
+        </div>
 
-    {/* Admin fixed to bottom */}
-    <div
-      style={{
-        position: "absolute",
-        bottom: "20px",
-        left: "20px",
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-        zIndex: 1
-      }}
-    >
-      <Avatar style={{ backgroundColor: "#e5e5e5", color: "#000", fontWeight: "bold" }}>A</Avatar>
-      <span style={{ fontWeight: "bold" }}>Admin</span>
-    </div>
-  </Sider>
+        <Menu
+          mode="inline"
+          defaultSelectedKeys={["1"]}
+          style={{ borderRight: 0, background: "transparent", position: "relative", zIndex: 1 }}
+        >
+          <Menu.Item key="1" style={{ fontWeight: "bold" }}>
+            Leads
+          </Menu.Item>
+          <Menu.Item key="2">Settings</Menu.Item>
+        </Menu>
+
+        {/* Admin fixed to bottom */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "20px",
+            left: "20px",
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            zIndex: 1
+          }}
+        >
+          <Avatar style={{ backgroundColor: "#e5e5e5", color: "#000", fontWeight: "bold" }}>A</Avatar>
+          <span style={{ fontWeight: "bold" }}>Admin</span>
+        </div>
+      </Sider>
 
       {/* Content */}
       <Layout style={{ padding: "20px", background: "#fff", borderRadius: "12px" }}>
@@ -220,11 +227,11 @@ const LeadsPage = () => {
           <h2 style={{ marginBottom: "20px" }}>Leads</h2>
           <div style={{ display: "flex", gap: "10px", marginBottom: "15px" }}>
             <Input
-               placeholder="Search"
-               prefix={<SearchOutlined style={{ color: "#999" }} />}
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
-                style={{ width: 200 }}
+              placeholder="Search"
+              prefix={<SearchOutlined style={{ color: "#999" }} />}
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              style={{ width: 200 }}
             />
             <Select
               placeholder="Status"
@@ -249,12 +256,12 @@ const LeadsPage = () => {
               overflow: "hidden",
             }}
             components={{
-                header: {
-                 cell: (props) => (
-                 <th {...props} style={{ backgroundColor: "#fff", ...props.style }} />
-                 ),
-                },
-              }}
+              header: {
+                cell: (props) => (
+                  <th {...props} style={{ backgroundColor: "#fff", ...props.style }} />
+                ),
+              },
+            }}
           />
         </Content>
       </Layout>
@@ -263,4 +270,3 @@ const LeadsPage = () => {
 };
 
 export default LeadsPage;
-
