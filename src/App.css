@@ -1,8 +1,6 @@
-/* base */
 :root { --muted-border: #f0f0f0; --thin: #ececec; --muted-text: #6b6b6b; }
 html, body, #root { height: 100%; margin: 0; font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: #ffffff; }
 
-/* Layout */
 .app-layout { background: #fff; }
 .sidebar {
   padding: 0;
@@ -11,7 +9,6 @@ html, body, #root { height: 100%; margin: 0; font-family: Inter, "Segoe UI", Rob
   border-right: 1px solid var(--thin);
 }
 
-/* big soft yellow halo (bigger & subtle) */
 .yellow-circle {
   position: absolute;
   top: -60px;
@@ -26,7 +23,6 @@ html, body, #root { height: 100%; margin: 0; font-family: Inter, "Segoe UI", Rob
 .logo-wrap { position: relative; padding: 28px 18px; z-index: 2; }
 .logo { font-weight: 700; font-size: 22px; position: relative; z-index: 3; }
 
-/* Menu items: no blue highlight, bold when selected */
 .side-menu { border-right: 0; }
 .side-item { font-weight: 500; color: #111; }
 .ant-menu-item-selected {
@@ -35,7 +31,6 @@ html, body, #root { height: 100%; margin: 0; font-family: Inter, "Segoe UI", Rob
   font-weight: 700 !important;
 }
 
-/* Admin area at bottom with divider */
 .admin-wrap {
   position: absolute;
   bottom: 20px;
@@ -60,7 +55,12 @@ html, body, #root { height: 100%; margin: 0; font-family: Inter, "Segoe UI", Rob
 }
 .admin-name { font-weight: 700; color: #000; }
 
-/* Main content */
 .content { padding: 24px; }
 .page-title { margin: 0 0 14px 0; font-size: 20px; font-weight: 600;
+}
+
+.ant-table-tbody > tr:last-child > td {
+  border: none !important;
+  box-shadow: none !important;
+  background: #fff !important;
 }
