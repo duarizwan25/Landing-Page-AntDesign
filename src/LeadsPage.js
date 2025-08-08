@@ -10,7 +10,7 @@ const LeadsPage = () => {
   const [statusFilter, setStatusFilter] = useState("");
   const [searchText, setSearchText] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 7;
+  const pageSize = 8;
 
   const data = [
     { key: "1", name: "Jorge Ruiz", submitted: "02/02/2024, 2:45 PM", status: "Pending", country: "Mexico" },
@@ -263,3 +263,4 @@ const LeadsPage = () => {
 };
 
 export default LeadsPage;
+
