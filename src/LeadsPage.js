@@ -8,7 +8,7 @@ const { Sider, Content } = Layout;
 const { Option } = Select;
 
 const LeadsPage = () => {
-  const [statusFilter, setStatusFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState(null);
   const [searchText, setSearchText] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 8;
@@ -270,3 +270,4 @@ const LeadsPage = () => {
 };
 
 export default LeadsPage;
+
