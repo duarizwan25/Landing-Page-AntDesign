@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Layout, Menu, Table, Input, Select, Avatar } from "antd";
 import "antd/dist/reset.css";
+import { SearchOutlined } from "@ant-design/icons";
 
 const { Sider, Content } = Layout;
 const { Option } = Select;
@@ -120,11 +121,39 @@ const LeadsPage = () => {
   const tableData = [...paginatedData, paginationRow];
 
   const columns = [
-    { title: "Name", dataIndex: "name" },
-    { title: "Submitted", dataIndex: "submitted" },
-    { title: "Status", dataIndex: "status" },
-    { title: "Country", dataIndex: "country" }
-  ];
+  {
+    title: (
+      <span style={{ color: "#999", fontWeight: "normal" }}>
+        Name <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
+      </span>
+    ),
+    dataIndex: "name"
+  },
+  {
+    title: (
+      <span style={{ color: "#999", fontWeight: "normal" }}>
+        Submitted <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
+      </span>
+    ),
+    dataIndex: "submitted"
+  },
+  {
+    title: (
+      <span style={{ color: "#999", fontWeight: "normal" }}>
+        Status <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
+      </span>
+    ),
+    dataIndex: "status"
+  },
+  {
+    title: (
+      <span style={{ color: "#999", fontWeight: "normal" }}>
+        Country <span style={{ fontSize: "16px", fontWeight: "bold" }}>↓</span>
+      </span>
+    ),
+    dataIndex: "country"
+  }
+];
 
   return (
     <Layout style={{ height: "100vh", background: "transparent" }}>
@@ -191,10 +220,11 @@ const LeadsPage = () => {
           <h2 style={{ marginBottom: "20px" }}>Leads</h2>
           <div style={{ display: "flex", gap: "10px", marginBottom: "15px" }}>
             <Input
-              placeholder="Search"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-              style={{ width: 200 }}
+               placeholder="Search"
+               prefix={<SearchOutlined style={{ color: "#999" }} />}
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                style={{ width: 200 }}
             />
             <Select
               placeholder="Status"
@@ -218,6 +248,13 @@ const LeadsPage = () => {
               borderRadius: "12px",
               overflow: "hidden",
             }}
+            components={{
+                header: {
+                 cell: (props) => (
+                 <th {...props} style={{ backgroundColor: "#fff", ...props.style }} />
+                 ),
+                },
+              }}
           />
         </Content>
       </Layout>
